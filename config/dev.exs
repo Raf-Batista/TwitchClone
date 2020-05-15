@@ -5,7 +5,7 @@ config :twitch_clone, TwitchClone.Repo,
   username: "postgres",
   password: "postgres",
   database: "twitch_clone_dev",
-  hostname: "db",
+  hostname: System.get_env("PGHOST") || "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
